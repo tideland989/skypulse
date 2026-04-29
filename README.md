@@ -61,6 +61,12 @@ git clone https://github.com/tideland989/skypulse && cd skypulse
 docker compose up
 ```
 
+If `docker` command shows as not available, wait for cloud-init to finish its run:
+
+```bash
+cloud-init status --wait
+```
+
 For a real deployment, drop a `.env` next to `docker-compose.yml` with the
 production `ANALYTICS_API_KEY` + `ANALYTICS_ENDPOINT` before `docker compose
 up`.

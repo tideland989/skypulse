@@ -2,7 +2,6 @@ locals {
   cloud_init = <<-EOT
     #cloud-config
     package_update: true
-    package_upgrade: true
     packages:
       - ca-certificates
       - curl
@@ -31,7 +30,7 @@ resource "digitalocean_droplet" "skypulse" {
   user_data = local.cloud_init
   tags      = var.tags
 
-  monitoring         = true
+  monitoring         = false
   ipv6               = true
   graceful_shutdown  = true
 }
