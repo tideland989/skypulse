@@ -1,0 +1,16 @@
+# Copy to terraform.tfvars (gitignored) and fill in.
+# Or export TF_VAR_do_token=... in the environment instead.
+
+do_token = "dop_v1_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Fingerprints of SSH keys already uploaded to DigitalOcean (Account → Security).
+# `doctl compute ssh-key list` will print them.
+ssh_key_fingerprints = [
+  # "aa:bb:cc:dd:...",
+]
+
+# Optional: tighten SSH to your IP. Default opens 22 to the world.
+# ssh_allowed_cidrs = ["198.51.100.42/32"]
+
+# region = "fra1"
+# size   = "s-1vcpu-1gb"

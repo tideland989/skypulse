@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: skypulse:local
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "3000"
+      DB_PATH: /data/skypulse.db
+      LOG_LEVEL: info
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - skypulse_data:/data
+    restart: unless-stopped
+
+volumes:
+  skypulse_data:
